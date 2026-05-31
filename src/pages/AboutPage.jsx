@@ -25,7 +25,7 @@ export default function AboutPage() {
           Қазақша сөйлейтін AI көмекшіңіз. Python, aiogram және Groq технологияларымен жасалған.
         </p>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center' }}>
-          <a href="https://t.me/nursaulee_bot" target="_blank" rel="noreferrer"
+          <a href="https://t.me/nursauleeebot" target="_blank" rel="noreferrer"
             style={{ padding: '10px 24px', borderRadius: 100, background: 'linear-gradient(135deg, #229ed9, #0088cc)', color: '#fff', fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>
             🤖 Telegram
           </a>
@@ -70,7 +70,7 @@ export default function AboutPage() {
       <div style={{ background: 'linear-gradient(135deg, rgba(124,92,252,0.1), rgba(56,189,248,0.1))', border: '1px solid rgba(124,92,252,0.3)', borderRadius: 16, padding: 48, textAlign: 'center' }}>
         <h3 style={{ fontFamily: 'Unbounded, sans-serif', fontSize: 24, fontWeight: 700, marginBottom: 10 }}>Ботты қолданып көріңіз!</h3>
         <p style={{ fontSize: 15, color: '#8888aa', marginBottom: 28 }}>Telegram-да /start командасын жіберіңіз</p>
-        <a href="https://t.me/nursaulee_bot" target="_blank" rel="noreferrer"
+        <a href="https://t.me/nursauleeebot" target="_blank" rel="noreferrer"
           style={{ display: 'inline-block', padding: '14px 32px', background: 'linear-gradient(135deg, #229ed9, #0088cc)', borderRadius: 100, color: '#fff', fontSize: 15, fontWeight: 600, textDecoration: 'none' }}>
           Telegram-да ашу ↗
         </a>
