@@ -7,7 +7,9 @@ export default function UsersPage() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('https://reword-litmus-luxurious.ngrok-free.dev/api/users')
+   fetch('https://reword-litmus-luxurious.ngrok-free.dev/api/users', {
+     headers: { 'ngrok-skip-browser-warning': 'true' }
+   })
       .then(r => r.json())
       .then(data => { setUsers(data.users || []); setLoading(false) })
       .catch(() => { setError('Backend қосылмады'); setLoading(false) })

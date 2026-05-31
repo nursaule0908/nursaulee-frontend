@@ -16,7 +16,9 @@ export default function FilesPage() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('https://reword-litmus-luxurious.ngrok-free.dev/api/files')
+    fetch('https://reword-litmus-luxurious.ngrok-free.dev/api/files', {
+      headers: { 'ngrok-skip-browser-warning': 'true' }
+    })
       .then(r => r.json())
       .then(data => { setFiles(data.files || []); setLoading(false) })
       .catch(e => { setError('Backend қосылмады'); setLoading(false) })
