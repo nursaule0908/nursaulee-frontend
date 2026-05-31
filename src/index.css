@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #0d0a0f;
+  color: #fff0f8;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root { min-height: 100vh; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #130f18; }
+::-webkit-scrollbar-thumb { background: #3a2040; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #e040a0; }
