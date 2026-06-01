@@ -33,7 +33,7 @@ export default function HomePage({ onNav }) {
           <button onClick={() => onNav('chat')} style={{ padding: '14px 32px', background: 'linear-gradient(135deg, #7c5cfc, #9b6dff)', borderRadius: 100, color: '#fff', fontSize: 15, fontWeight: 600, border: 'none', cursor: 'pointer', boxShadow: '0 0 40px rgba(124,92,252,0.3)' }}>
             ✦ Чатты бастау
           </button>
-          <a href="https://t.me/nursaulee_bot" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', padding: '14px 32px', background: '#16161f', border: '1px solid #2a2a3a', borderRadius: 100, color: '#f0f0ff', fontSize: 15, fontWeight: 600 }}>
+          <a href="https://t.me/nursauleeebot" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', padding: '14px 32px', background: '#16161f', border: '1px solid #2a2a3a', borderRadius: 100, color: '#f0f0ff', fontSize: 15, fontWeight: 600 }}>
             Telegram-да ашу ↗
           </a>
         </div>
