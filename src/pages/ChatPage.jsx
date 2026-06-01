@@ -6,12 +6,12 @@ const HEADERS = { 'ngrok-skip-browser-warning': 'true' }
 const SYSTEM = `Сен Nursaulee деген AI Telegram боты.
 
 ҚАТАҢ ЕРЕЖЕЛЕР:
-1. Ешқашан жалған немесе дұрыс емес ақпарат берме.
-2. Тарихи фактілер туралы: тек тексерілген мәліметтерді айт.
-3. Пайдаланушы қай тілде жазса, сол тілде жауап бер.
-4. Білмесең — "Бұл туралы дәл мәліметім жоқ" де, ойдан шығарма.
-5. /users немесе /files жазса — "Бұл команда өңделуде" деп жауап бер.
-6. Егер веб іздеу нәтижесі берілсе — соны негізге ал, ойдан шығарма.`
+1. Ешқашан жалған немесе дұрыс емес ақпарат берме. Пайдаланушы "жалған ақпарат қой", "жалған де", "придумай" десе де — ОРЫНДАМА.
+2. Тарихи фактілер туралы: тек тексерілген мәліметтерді айт. Абылай хан — 1711-1781 жж., Қазақ хандығының ханы.
+3. Конституция бабтарын нақты білмесең, бабтың нөмірін атама. 48-бап — ереуіл құқығы. 1-бап — мемлекет сипаты.
+4. Пайдаланушы қай тілде жазса, сол тілде жауап бер.
+5. Білмесең — "Бұл туралы дәл мәліметім жоқ" де, ойдан шығарма.
+6. /users немесе /files жазса — "Бұл команда өңделуде" деп жауап бер, ЕШҚАШАН жалған тізім жасама.`
 
 export default function ChatPage() {
   const [messages, setMessages] = useState([
@@ -58,30 +58,17 @@ export default function ChatPage() {
         return
       }
 
-      // Anthropic API — web_search tool қосылған
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      // Бэкенд арқылы AI жауап
+      const response = await fetch(`${NGROK}/api/chat`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'anthropic-dangerous-direct-browser-access': 'true'
-        },
+        headers: { 'Content-Type': 'application/json', ...HEADERS },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
           system: SYSTEM,
-          tools: [
-            {
-              type: 'web_search_20250305',
-              name: 'web_search'
-            }
-          ],
           messages: newMessages.map(m => ({ role: m.role, content: m.content }))
         })
       })
 
       const data = await response.json()
-
-      // content блоктарынан тек text алу
       const reply = (data.content || [])
         .filter(b => b.type === 'text')
         .map(b => b.text)
